@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  resources :printjobs
+
+  resources :artworks
+
+  resources :sizes
+
+  resources :colors
+
+  resources :mods
+
+  resources :shapes
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

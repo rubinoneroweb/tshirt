@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  shape_id: 1
+  mod_id: 1
+  color_id: 1
+  size_id: 1
+  artwork_id: 1
+  diamond: false
+  name_under: false
+  name_behind: false
+
+two:
+  name: MyString
+  shape_id: 1
+  mod_id: 1
+  color_id: 1
+  size_id: 1
+  artwork_id: 1
+  diamond: false
+  name_under: false
+  name_behind: false

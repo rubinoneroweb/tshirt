@@ -1,0 +1,53 @@
+<%= form_for(@printjob) do |f| %>
+  <% if @printjob.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@printjob.errors.count, "error") %> prohibited this printjob from being saved:</h2>
+
+      <ul>
+      <% @printjob.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :shape_id %><br>
+    <%= f.number_field :shape_id %>
+  </div>
+  <div class="field">
+    <%= f.label :mod_id %><br>
+    <%= f.number_field :mod_id %>
+  </div>
+  <div class="field">
+    <%= f.label :color_id %><br>
+    <%= f.number_field :color_id %>
+  </div>
+  <div class="field">
+    <%= f.label :size_id %><br>
+    <%= f.number_field :size_id %>
+  </div>
+  <div class="field">
+    <%= f.label :artwork_id %><br>
+    <%= f.number_field :artwork_id %>
+  </div>
+  <div class="field">
+    <%= f.label :diamond %><br>
+    <%= f.check_box :diamond %>
+  </div>
+  <div class="field">
+    <%= f.label :name_under %><br>
+    <%= f.check_box :name_under %>
+  </div>
+  <div class="field">
+    <%= f.label :name_behind %><br>
+    <%= f.check_box :name_behind %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

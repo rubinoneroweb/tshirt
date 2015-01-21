@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Printjobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Shape</th>
+      <th>Mod</th>
+      <th>Color</th>
+      <th>Size</th>
+      <th>Artwork</th>
+      <th>Diamond</th>
+      <th>Name under</th>
+      <th>Name behind</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @printjobs.each do |printjob| %>
+      <tr>
+        <td><%= printjob.name %></td>
+        <td><%= printjob.shape_id %></td>
+        <td><%= printjob.mod_id %></td>
+        <td><%= printjob.color_id %></td>
+        <td><%= printjob.size_id %></td>
+        <td><%= printjob.artwork_id %></td>
+        <td><%= printjob.diamond %></td>
+        <td><%= printjob.name_under %></td>
+        <td><%= printjob.name_behind %></td>
+        <td><%= link_to 'Show', printjob %></td>
+        <td><%= link_to 'Edit', edit_printjob_path(printjob) %></td>
+        <td><%= link_to 'Destroy', printjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Printjob', new_printjob_path %>

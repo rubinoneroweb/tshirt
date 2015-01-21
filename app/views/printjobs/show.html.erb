@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @printjob.name %>
+</p>
+
+<p>
+  <strong>Shape:</strong>
+  <%= @printjob.shape.description %>
+</p>
+
+<p>
+  <strong>Mod:</strong>
+  <%= @printjob.mod.description %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @printjob.color.description %> 
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @printjob.size.description %>
+</p>
+
+<p>
+  <strong>Artwork:</strong>
+  <%= @printjob.artwork_id %>
+</p>
+
+<p>
+  <strong>Diamond:</strong>
+  <%= @printjob.diamond %>
+</p>
+
+<p>
+  <strong>Name under:</strong>
+  <%= @printjob.name_under %>
+</p>
+
+<p>
+  <strong>Name behind:</strong>
+  <%= @printjob.name_behind %>
+</p>
+
+<%= link_to 'Edit', edit_printjob_path(@printjob) %> |
+<%= link_to 'Back', printjobs_path %>

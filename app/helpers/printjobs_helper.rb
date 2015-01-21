@@ -1,0 +1,2 @@
+module PrintjobsHelper
+end

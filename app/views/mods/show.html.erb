@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shape:</strong>
+  <%= @mod.shape_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mod.description %>
+</p>
+
+<%= link_to 'Edit', edit_mod_path(@mod) %> |
+<%= link_to 'Back', mods_path %>
