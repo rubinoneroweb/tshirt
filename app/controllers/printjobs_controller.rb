@@ -15,6 +15,7 @@ class PrintjobsController < ApplicationController
   # GET /printjobs/new
   def new
     @printjob = Printjob.new
+     @mods = Mod.where("shape_id = ?", params[:shape_id])
   end
 
   # GET /printjobs/1/edit
@@ -25,6 +26,7 @@ class PrintjobsController < ApplicationController
   # POST /printjobs.json
   def create
     @printjob = Printjob.new(printjob_params)
+
 
     respond_to do |format|
       if @printjob.save

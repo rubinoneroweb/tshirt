@@ -45,5 +45,10 @@
   <%= @printjob.name_behind %>
 </p>
 
-<%= link_to 'Edit', edit_printjob_path(@printjob) %> |
-<%= link_to 'Back', printjobs_path %>
+<p>
+  <strong>Note:</strong>
+  <%= @printjob.note %>
+</p>
+
+<%= link_to 'Edit', edit_printjob_path(@printjob), :class=>"button" %> |
+<%= link_to 'Back', printjobs_path,  :class=>"button" %>

@@ -1,53 +1,58 @@
-<%= form_for(@printjob) do |f| %>
-  <% if @printjob.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@printjob.errors.count, "error") %> prohibited this printjob from being saved:</h2>
+<%= form_for(@printjob, :html => {:class => 'custom'}) do |f| %>
+<% if @printjob.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@printjob.errors.count, "error") %>prohibited this printjob from being saved:</h2>
 
-      <ul>
-      <% @printjob.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @printjob.errors.full_messages.each do |message| %>
+    <li>
+      <%= message %></li>
+    <% end %></ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :shape_id %><br>
-    <%= f.number_field :shape_id %>
-  </div>
-  <div class="field">
-    <%= f.label :mod_id %><br>
-    <%= f.number_field :mod_id %>
-  </div>
-  <div class="field">
-    <%= f.label :color_id %><br>
-    <%= f.number_field :color_id %>
-  </div>
-  <div class="field">
-    <%= f.label :size_id %><br>
-    <%= f.number_field :size_id %>
-  </div>
-  <div class="field">
-    <%= f.label :artwork_id %><br>
-    <%= f.number_field :artwork_id %>
-  </div>
-  <div class="field">
-    <%= f.label :diamond %><br>
+<div class="field">
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name %></div>
+<div class="field">
+  <%= f.label :shape_id %>
+  <br>
+  <%= f.select :shape_id, options_for_select(Shape.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'shapes_select' } %></div>
+<div class="field">
+  <%= f.label :mod_id %>
+  <br>
+  <%= f.select :mod_id, options_for_select(["Scegli un Tipo"], 0), {}, {id: 'mods_select'} %></div>
+<div class="field">
+  <%= f.label :color_id %>
+  <br>
+  <%= f.select :color_id, options_for_select(Color.all.map{|c|[c.description, c.id]}, 1) %></div>
+<div class="field">
+  <%= f.label :size_id %>
+  <br>
+  <%= f.select :size_id, options_for_select(Size.all.map{|sz|[sz.description, sz.id]}, 1) %></div>
+<div class="field">
+  <%= f.label :artwork_id %>
+  <br>
+  <%= f.number_field :artwork_id %></div>
+  Strass
+  <div class=" switch ">
     <%= f.check_box :diamond %>
+    <%= f.label :diamond %>
   </div>
-  <div class="field">
-    <%= f.label :name_under %><br>
+    Sotto
+  <div class="switch">
     <%= f.check_box :name_under %>
+    <%= f.label :name_under %>
   </div>
-  <div class="field">
-    <%= f.label :name_behind %><br>
+    Dietro
+  <div class="switch">
     <%= f.check_box :name_behind %>
+    <%= f.label :name_behind %>
+    
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+<div class="actions">
+  <%= f.submit "Avvia Lavoro", :class =>"button" %></div>
 <% end %>

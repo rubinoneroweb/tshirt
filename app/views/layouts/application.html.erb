@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tshirt</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %></head>
+
 <body>
+  <div class="row">
+    <div class="small-3 column">
+      <h1>Example</h1>
+    </div>
+    <div class="small-9 column">
+      <%= yield %>
+    </div>
 
-<%= yield %>
+  </div>
 
-</body>
+  <%= javascript_include_tag "application" %></body>
 </html>

@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @artwork.name %>
+  <%=  @artwork.name %>
 </p>
 
 <p>
@@ -11,8 +11,7 @@
 </p>
 
 <p>
-  <strong>Path:</strong>
-  <%= @artwork.path %>
+  <%= image_tag "catalog/"+@artwork.path %>
 </p>
 
 <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
