@@ -12,5 +12,22 @@ $ ->
       }
       error: (jqXHR, textStatus, errorThrown) ->
         console.log("AJAX Error: #{textStatus}")
+        
       success: (data, textStatus, jqXHR) ->
-        console.log("Dynamic country select OK!")
+      	 console.log("Dynamic model select OK!")
+  
+
+  $ ->
+  $(document).on 'change', '#colors_select', (evt) ->
+    $.ajax 'new',
+      type: 'GET'
+      dataType: 'script'
+      data: {
+        color_id: $("#colors_select option:selected").val()
+      }
+      error: (jqXHR, textStatus, errorThrown) ->
+        console.log("AJAX Error: #{textStatus}")
+        
+      success: (data, textStatus, jqXHR) ->
+      	 console.log("Dynamic color select OK!")
+  

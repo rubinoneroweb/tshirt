@@ -27,7 +27,7 @@
 <div class="field">
   <%= f.label :color_id %>
   <br>
-  <%= f.select :color_id, options_for_select(Color.all.map{|c|[c.description, c.id]}, 1) %></div>
+  <%= f.select :color_id, options_for_select(Color.all.map{|c|[c.description, c.id]}, 1), {}, {id: 'colors_select'} %></div>
 <div class="field">
   <%= f.label :size_id %>
   <br>

@@ -15,7 +15,10 @@ class PrintjobsController < ApplicationController
   # GET /printjobs/new
   def new
     @printjob = Printjob.new
-     @mods = Mod.where("shape_id = ?", params[:shape_id])
+    @mods = Mod.where("shape_id = ?", params[:shape_id])
+    #@color = Color.where("id = ?", params[:color_id])
+    @color = Color.where("color_id = ?", params[:color_id])
+    
   end
 
   # GET /printjobs/1/edit
