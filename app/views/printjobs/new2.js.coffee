@@ -1,0 +1,1 @@
+$("#colors_select").empty()

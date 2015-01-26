@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :fonts
+
   resources :printjobs
 
   resources :artworks
@@ -69,4 +71,12 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+get 'printjobs/update_mods', :as => 'update_mods'
+get 'printjobs/update_colors_sizes', :as => 'update_colors_sizes'
+root :to => "printjob#new"
+
+
 end
+
+

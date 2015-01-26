@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122101348) do
+ActiveRecord::Schema.define(version: 20150126140921) do
 
   create_table "artworks", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20150122101348) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "fonts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "mods", force: :cascade do |t|
     t.integer  "shape_id"
     t.string   "description"
@@ -35,6 +42,22 @@ ActiveRecord::Schema.define(version: 20150122101348) do
     t.datetime "updated_at",  null: false
     t.string   "path"
   end
+
+  create_table "mods_and_colors", force: :cascade do |t|
+    t.integer "mod_id"
+    t.integer "color_id"
+  end
+
+  add_index "mods_and_colors", ["color_id"], name: "index_mods_and_colors_on_color_id"
+  add_index "mods_and_colors", ["mod_id"], name: "index_mods_and_colors_on_mod_id"
+
+  create_table "mods_and_sizes", force: :cascade do |t|
+    t.integer "mod_id"
+    t.integer "size_id"
+  end
+
+  add_index "mods_and_sizes", ["mod_id"], name: "index_mods_and_sizes_on_mod_id"
+  add_index "mods_and_sizes", ["size_id"], name: "index_mods_and_sizes_on_size_id"
 
   create_table "printjobs", force: :cascade do |t|
     t.string   "name"
@@ -51,6 +74,10 @@ ActiveRecord::Schema.define(version: 20150122101348) do
     t.text     "note"
     t.boolean  "ready"
     t.boolean  "archived"
+    t.text     "caption"
+    t.integer  "font_id"
+    t.float    "price"
+    t.integer  "font_color"
   end
 
   create_table "shapes", force: :cascade do |t|

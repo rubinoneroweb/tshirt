@@ -30,28 +30,18 @@
       <%= f.label :shape_id %>
       <br>
       <%= f.select :shape_id, options_for_select(Shape.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'shapes_select' } %></div>
-
-
-
-
     <div class="field">
       <%= f.label :mod_id %>
       <br>
-      <%= collection_select(nil, :mod_id,  @mods,  :id, :description, {:prompt   => "Seleziona un modello"}, {:id => 'mods_select'}) %>
-      </div>
-    
+      <%= f.select :mod_id, options_for_select(["Scegli un Tipo"], 0), {}, {id: 'mods_select'} %></div>
     <div class="field">
       <%= f.label :color_id %>
       <br>
-      <%= collection_select(nil, :color_id,  @colors,  :id, :description, {:prompt   => "Seleziona un colore"}, {:id => 'colors_select'}) %>
-      </div>
-    
+      <%= f.select :color_id, options_for_select(Color.all.map{|c|[c.description, c.id]}, 1), {}, {id: 'colors_select'} %></div>
     <div class="field">
       <%= f.label :size_id %>
       <br>
-      <%= collection_select(nil, :size_id,  @sizes,  :id, :description, {:prompt   => "Seleziona una taglia"}, {:id => 'sizes_select'}) %>
-
-      </div>
+      <%= f.select :size_id, options_for_select(Size.all.map{|sz|[sz.description, sz.id]}, 1) %></div>
       <a href="#panel2" class="button">Avanti &gt;&gt;</a>
   </div>
   <div class="content" id="panel2">

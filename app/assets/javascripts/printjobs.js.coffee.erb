@@ -1,0 +1,27 @@
+
+ready = undefined
+ready = ->
+  $("#shapes_select").change ->
+    $.ajax
+      url: "update_mods"
+      data:
+        shape_id: $("#shapes_select").val()
+
+      dataType: "script"
+
+    return
+
+  $("#mods_select").change ->
+    $.ajax
+      url: "new"
+      data:
+        mod_id: $("#mods_select").val()
+
+      dataType: "script"
+
+    return
+
+  return
+
+$(document).ready ready
+$(document).on "page:load", ready

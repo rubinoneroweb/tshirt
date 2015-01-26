@@ -10,5 +10,46 @@
   <%= @mod.description %>
 </p>
 
+
+<table>
+  <thead>
+    <tr>
+      <th>Taglie Disponibili</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sizes.each do |size| %>
+      <tr>
+        <td><%= size.description %></td>
+       
+        <td><%= link_to 'Destroy', size, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Colori Disponibili</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @colors.each do |color| %>
+      <tr>
+      <td style="background-color: <%= color.code %>"></td>
+        <td><%= color.description %></td>
+       
+        <td><%= link_to 'Destroy', color, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <%= link_to 'Edit', edit_mod_path(@mod) %> |
 <%= link_to 'Back', mods_path %>

@@ -10,6 +10,9 @@ class ModsController < ApplicationController
   # GET /mods/1
   # GET /mods/1.json
   def show
+   
+    @colors = @mod.color
+    @sizes = @mod.size
   end
 
   # GET /mods/new
@@ -40,6 +43,8 @@ class ModsController < ApplicationController
   # PATCH/PUT /mods/1
   # PATCH/PUT /mods/1.json
   def update
+    @colors = @mod.color
+    @sizes = @mod.size
     respond_to do |format|
       if @mod.update(mod_params)
         format.html { redirect_to @mod, notice: 'Mod was successfully updated.' }
