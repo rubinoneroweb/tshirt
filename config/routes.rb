@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :artcats
+
   resources :fonts
 
   resources :printjobs
