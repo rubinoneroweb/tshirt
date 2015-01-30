@@ -1,0 +1,16 @@
+<h1>Catalogo</h1>
+<label>Scegli una categoria
+<%= select("artcat_select", "artcat_id", @artcats.collect { |a| [a.description, a.id]  }, {include_blank: "Tutte"},{id: "artcat_select"}) %>
+</label>
+
+
+
+
+<div id="owl-example" class="owl-carousel">
+	<% @artworks.each do |artwork| %>
+	      <div id="catalog_container">
+	      	<h3 class="text-center"><%= artwork.description %></h3>
+	      	 <%= image_tag "catalog/"+artwork.path %>
+	      </div>
+	<% end %>
+</div>

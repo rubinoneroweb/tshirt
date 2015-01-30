@@ -7,6 +7,28 @@ class ArtworksController < ApplicationController
     @artworks = Artwork.all
   end
 
+  def catalog
+    @artworks = Artwork.all
+    @artcats = Artcat.all
+    if params[:artcat_id]
+      @artworks = Artcat.find(params[:artcat_id]).artwork
+
+    end
+  end
+
+   def update_catalog
+    @artcats = Artcat.all
+    @artworks = Artwork.all
+    if params[:artcat_id].present?
+      @artworks = Artcat.find(params[:artcat_id]).artwork
+
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
+
   # GET /artworks/1
   # GET /artworks/1.json
   def show

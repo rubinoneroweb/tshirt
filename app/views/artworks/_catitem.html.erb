@@ -1,0 +1,6 @@
+<% @artworks.each do |artwork| %>
+	      <div id="catalog_container">
+	      	<h2><%= artwork.description %></h2>
+	      	 <%= image_tag "catalog/"+artwork.path %>
+	      </div>
+	<% end %>

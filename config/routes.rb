@@ -5,7 +5,12 @@ Rails.application.routes.draw do
 
   resources :printjobs
 
-  resources :artworks
+  resources :artworks do
+    collection do
+      get 'catalog'
+      get 'update_catalog'
+    end
+  end
 
   resources :sizes
 
@@ -17,7 +22,11 @@ Rails.application.routes.draw do
 
   get 'printjobs/new'
 
+  get 'artworks/update_catalog', as: 'update_catalog'
+
   get 'printjobs/new2', as: 'new'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
