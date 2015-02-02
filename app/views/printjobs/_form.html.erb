@@ -37,19 +37,22 @@
     <div class="field">
       <%= f.label :mod_id %>
       <br>
-      <%= collection_select(nil, :mod_id,  @mods,  :id, :description, {:prompt   => "Seleziona un modello"}, {:id => 'mods_select'}) %>
+      <%= f.select(:mod_id,  '',  {:prompt   => "Seleziona un modello"}, {:id => 'mods_select'}) %>
       </div>
     
     <div class="field">
       <%= f.label :color_id %>
       <br>
-      <%= collection_select(nil, :color_id,  @colors,  :id, :description, {:prompt   => "Seleziona un colore"}, {:id => 'colors_select'}) %>
+      <%= f.select(:color_id,  '',   {:prompt   => "Seleziona un colore"}, {:id => 'colors_select'}) %>
       </div>
+    <div id="color_thumb">
+      
+    </div>
     
     <div class="field">
       <%= f.label :size_id %>
       <br>
-      <%= collection_select(nil, :size_id,  @sizes,  :id, :description, {:prompt   => "Seleziona una taglia"}, {:id => 'sizes_select'}) %>
+      <%= f.select(:size_id,  '',   {:prompt   => "Seleziona una taglia"}, {:id => 'sizes_select'}) %>
 
       </div>
       <a href="#panel2" class="button">Avanti &gt;&gt;</a>

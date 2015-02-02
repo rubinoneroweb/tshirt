@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Printjobs</h1>
+<h1>Coda di Stampa</h1>
 
 <table>
   <thead>
@@ -10,7 +10,7 @@
       <th>Mod</th>
       <th>Color</th>
       <th>Size</th>
-      <th>Artwork</th>
+      <th colspan="2">Artwork</th>
       <th>Diamond</th>
       <th>Name under</th>
       <th>Name behind</th>
@@ -22,17 +22,18 @@
     <% @printjobs.each do |printjob| %>
       <tr>
         <td><%= printjob.name %></td>
-        <td><%= printjob.shape_id %></td>
-        <td><%= printjob.mod_id %></td>
-        <td><%= printjob.color_id %></td>
-        <td><%= printjob.size_id %></td>
-        <td><%= printjob.artwork_id %></td>
+        <td><%= printjob.shape.description %></td>
+        <td><%= printjob.mod.description %></td>
+        <td><%= printjob.color.description %></td>
+        <td><%= printjob.size.description %></td>
+        <td><%= image_tag 'catalog/'+ printjob.artwork.path, :class =>'thumb_art' %></td>
+        <td><%= printjob.artwork.name%></td>
         <td><%= printjob.diamond %></td>
         <td><%= printjob.name_under %></td>
         <td><%= printjob.name_behind %></td>
-        <td><%= link_to 'Show', printjob %></td>
-        <td><%= link_to 'Edit', edit_printjob_path(printjob) %></td>
-        <td><%= link_to 'Destroy', printjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'O', printjob %></td>
+        <td><%= link_to 'E', edit_printjob_path(printjob) %></td>
+        <td><%= link_to 'X', printjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

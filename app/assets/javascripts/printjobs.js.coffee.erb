@@ -1,5 +1,3 @@
-
-ready = undefined
 ready = ->
   $("#shapes_select").change ->
     $.ajax
@@ -13,11 +11,19 @@ ready = ->
 
   $("#mods_select").change ->
     $.ajax
-      url: "new"
+      url: "update_details"
       data:
         mod_id: $("#mods_select").val()
 
       dataType: "script"
+
+    return
+
+  $("#colors_select").change ->
+    selected = $(this).find('option:selected');
+
+    $("#color_thumb").css('background-color', selected.data('support'));
+    
 
     return
 

@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   resources :fonts
 
-  resources :printjobs
+  resources :printjobs do
+    collection do
+      get 'update_mods'
+      get 'update_details'
+    end
+  end
 
   resources :artworks do
     collection do

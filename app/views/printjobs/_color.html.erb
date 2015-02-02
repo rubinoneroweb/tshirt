@@ -1,0 +1,4 @@
+
+<%= @color.each do |color|  %>
+<option value="<%= color.id %>" data-support="<%= color.code %>"><%= color.description %></option>
+ <% end %>

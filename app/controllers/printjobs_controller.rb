@@ -16,24 +16,23 @@ class PrintjobsController < ApplicationController
   def new
     @printjob = Printjob.new
     @mods = Mod.where("shape_id = ?", params[:shape_id])
-    #@color = Color.where("id = ?", params[:color_id])
-    @colors = Color.all
-    @sizes = Size.all
+    @color = Color.where("id = ?", params[:color_id])
+    #@colors = Color.all
+    #@sizes = Size.all
     
   end
 
 
-  def update_mod
+  def update_mods
     @mods = Mod.where("shape_id = ?", params[:shape_id])
 
   end
 
-  def update_colors_sizes
-    mod = Mod.find(params[:mod_id])
-    @colors = mod.color.map{|c| [c.description, c.id]}.insert(0, "Seleziona colore")
-    @sizes = mod.size.map{|s| [s.description, s.id]}.insert(0, "Seleziona taglia")
-
+  def update_details
+    @size = Mod.find(params[:mod_id]).size
+    @color = Mod.find(params[:mod_id]).color
   end
+  
 
   # GET /printjobs/1/edit
   def edit
