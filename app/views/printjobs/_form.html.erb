@@ -61,16 +61,20 @@
     <div class="field">
       <%= f.label :artwork_id %>
       <br>
-      <%= f.number_field :artwork_id %></div>
+      <%= f.select :artwork_id, options_for_select(Artwork.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'artwork_select' } %></div>
+      <div class="field">
+      <%= f.label :note %>
+      <%= f.text_area :note %>
+      </div>
     Strass
     <div class=" switch ">
       <%= f.check_box :diamond %>
       <%= f.label :diamond %></div>
-    Sotto
+    Nome Sotto
     <div class="switch">
       <%= f.check_box :name_under %>
       <%= f.label :name_under %></div>
-    Dietro
+    Nome Dietro
     <div class="switch">
       <%= f.check_box :name_behind %>
       <%= f.label :name_behind %></div>

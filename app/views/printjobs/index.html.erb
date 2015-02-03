@@ -11,9 +11,10 @@
       <th>Color</th>
       <th>Size</th>
       <th colspan="2">Artwork</th>
-      <th>Diamond</th>
-      <th>Name under</th>
-      <th>Name behind</th>
+      <th>Strass</th>
+      <th>Nome sotto</th>
+      <th>Nome dietro</th>
+      <th>Note</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,9 +29,10 @@
         <td><%= printjob.size.description %></td>
         <td><%= image_tag 'catalog/'+ printjob.artwork.path, :class =>'thumb_art' %></td>
         <td><%= printjob.artwork.name%></td>
-        <td><%= printjob.diamond %></td>
-        <td><%= printjob.name_under %></td>
-        <td><%= printjob.name_behind %></td>
+        <td><%= printjob.diamond  ? "si" : "no" %></td>
+        <td><%= printjob.name_under ? "si" : "no" %></td>
+        <td><%= printjob.name_behind  ? "si" : "no"  %></td>
+        <td><%= printjob.note %></td>
         <td><%= link_to 'O', printjob %></td>
         <td><%= link_to 'E', edit_printjob_path(printjob) %></td>
         <td><%= link_to 'X', printjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
