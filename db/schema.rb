@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130134933) do
+ActiveRecord::Schema.define(version: 20150209165642) do
 
   create_table "artcats", force: :cascade do |t|
     t.string   "description"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20150130134933) do
     t.integer  "font_id"
     t.float    "price"
     t.integer  "font_color"
+    t.string   "lettering"
   end
 
   create_table "shapes", force: :cascade do |t|

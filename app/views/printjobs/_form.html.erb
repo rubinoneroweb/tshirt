@@ -23,49 +23,59 @@
 <div class="tabs-content" >
   <div class="content active" id="panel1">
     <div class="field">
-      <%= f.label :name %>
+      <%= f.label "Nome" %>
       <br>
       <%= f.text_field :name %></div>
-    <div class="field">
-      <%= f.label :shape_id %>
-      <br>
-      <%= f.select :shape_id, options_for_select(Shape.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'shapes_select' } %></div>
 
-
-
-
-    <div class="field">
-      <%= f.label :mod_id %>
-      <br>
-      <%= f.select(:mod_id,  '',  {:prompt   => "Seleziona un modello"}, {:id => 'mods_select'}) %>
+      <div class="row">
+        <div class="field small-6 columns">
+          <%= f.label "Tipo" %>
+          <br><%= f.select :shape_id, options_for_select(Shape.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'shapes_select' } %>
+        </div>
+        <div class="field  small-6 columns">
+          <%= f.label "Modello" %>
+          <br>
+          <%= f.select(:mod_id,  '',  {:prompt   => "Seleziona un modello"}, {:id => 'mods_select'}) %>
+        </div>
+        
       </div>
     
-    <div class="field">
-      <%= f.label :color_id %>
-      <br>
-      <%= f.select(:color_id,  '',   {:prompt   => "Seleziona un colore"}, {:id => 'colors_select'}) %>
-      </div>
-    <div id="color_thumb">
-      
-    </div>
+
+
+
+
     
-    <div class="field">
-      <%= f.label :size_id %>
+    <div class="row">
+    <div id="color_thumb" class="small-2 columns">
+        
+        </div>
+      <div class="field small-4 columns">
+        <%= f.label "Colore" %>
+        <br>
+        <%= f.select(:color_id,  '',   {:prompt   => "Seleziona un colore"}, {:id => 'colors_select'}) %>
+         
+      </div>
+   
+    
+    <div class="field small-6 columns">
+      <%= f.label "Taglia" %>
       <br>
       <%= f.select(:size_id,  '',   {:prompt   => "Seleziona una taglia"}, {:id => 'sizes_select'}) %>
 
       </div>
+    </div>
       <a href="#panel2" class="button">Avanti &gt;&gt;</a>
   </div>
   <div class="content" id="panel2">
-    <div class="field">
+  <div class="row">
+    <div class="field small-6 columns">
       <%= f.label :artwork_id %>
       <br>
-      <%= f.select :artwork_id, options_for_select(Artwork.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'artwork_select' } %></div>
-      <div class="field">
+      <%= f.select :artwork_id, options_for_select(Artwork.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'artwork_select' } %>
       <%= f.label :note %>
       <%= f.text_area :note %>
       </div>
+    <div class="small-6 columns">
     Strass
     <div class=" switch ">
       <%= f.check_box :diamond %>
@@ -78,8 +88,17 @@
     <div class="switch">
       <%= f.check_box :name_behind %>
       <%= f.label :name_behind %></div>
-
+    </div> 
+    <%= f.select :font_id, options_for_select(Font.all.map{|fn|[fn.name, fn.id]}, 1), {}, { id: 'font_select' } %>
+    <%= f.label "Testo" %>
+      <br>
+      <%= f.text_field :lettering %></div>
+      <%= f.label "Colore Testo" %>
+      <%= f.select :font_color, options_for_select(Color.all.map{|cf|[cf.description, cf.id]}, 1), {}, { id: 'fontcolor_select' } %>
+    
+  </div> 
     <div class="actions">
       <%= f.submit "Avvia Lavoro", :class =>"button" %></div>
-    <% end %></div>
+    <% end %>
+  </div>
 </div>
