@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrizione:</strong>
   <%= @artcat.description %>
 </p>
 
 <p>
-  <strong>Path:</strong>
+  <strong>Icona:</strong>
   <%= @artcat.path %>
 </p>
 
-<%= link_to 'Edit', edit_artcat_path(@artcat) %> |
-<%= link_to 'Back', artcats_path %>
+
+<%= link_to 'Torna a lista Categorie', artcats_path, :class => "button" %>

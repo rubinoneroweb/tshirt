@@ -23,6 +23,11 @@ ready = ->
     selected = $(this).find('option:selected');
 
     $("#color_thumb").css('background-color', selected.data('support'));
+
+  $("#fontcolor_select").change ->
+    selected = $(this).find('option:selected');
+
+    $("#printjob_lettering").css('color', selected.data('support'));
     
 
     return

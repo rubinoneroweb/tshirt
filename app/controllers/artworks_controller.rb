@@ -41,6 +41,12 @@ class ArtworksController < ApplicationController
 
   # GET /artworks/1/edit
   def edit
+    @artcats = Artcat.all
+     if (params[:artcats])
+      params[:artcats].each do |k,v|
+        @artwork.artcat << Artcat.find(k)
+      end
+    end
   end
 
   # POST /artworks

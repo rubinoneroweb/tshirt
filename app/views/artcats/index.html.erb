@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Artcats</h1>
+<h1>Categorie Disegni</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Path</th>
+      <th>Descrizione</th>
+      <th>Icona</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= artcat.description %></td>
         <td><%= artcat.path %></td>
-        <td><%= link_to 'Show', artcat %></td>
-        <td><%= link_to 'Edit', edit_artcat_path(artcat) %></td>
-        <td><%= link_to 'Destroy', artcat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostra', artcat %></td>
+        <td><%= link_to 'Modifica', edit_artcat_path(artcat) %></td>
+        <td><%= link_to 'Elimina', artcat, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Artcat', new_artcat_path %>
+<%= link_to 'Nuova Categoria', new_artcat_path, :class =>"button" %>

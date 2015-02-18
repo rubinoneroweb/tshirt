@@ -94,7 +94,7 @@
       <br>
       <%= f.text_field :lettering %></div>
       <%= f.label "Colore Testo" %>
-      <%= f.select :font_color, options_for_select(Color.all.map{|cf|[cf.description, cf.id]}, 1), {}, { id: 'fontcolor_select' } %>
+      <%= f.select :font_color, options_for_select(Color.all.map{|cf|[cf.description, cf.id, {:'data-support' => cf.code}]}, 1), {}, { id: 'fontcolor_select'  } %>
     
   </div> 
     <div class="actions">

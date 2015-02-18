@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Artworks</h1>
+<h1>Elenco Disegni</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Path</th>
+      <th>Nome</th>
+      <th>Descrizione</th>
+      <th>Immagine</th>
+      <th>Categorie</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +19,10 @@
         <td><%= artwork.name %></td>
         <td><%= artwork.description %></td>
         <td><%= artwork.path %></td>
-        <td><%= link_to 'Show', artwork %></td>
-        <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
-        <td><%= link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= artwork.artcat.map { |e| e.description  }.join(", ") %></td>
+        <td><%= link_to 'Mostra', artwork %></td>
+        <td><%= link_to 'Modifica', edit_artwork_path(artwork) %></td>
+        <td><%= link_to 'Elimina', artwork, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
       </tr>
     <% end %>
   </tbody>

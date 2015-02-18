@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get 'update_mods'
       get 'update_details'
+      get 'mark_completed'
     end
   end
 

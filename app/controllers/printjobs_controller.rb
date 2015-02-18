@@ -79,6 +79,14 @@ class PrintjobsController < ApplicationController
     end
   end
 
+  def mark_completed
+    @printjob.completed = true
+    respond_to do |format|
+      format.html { redirect_to printjobs_url, notice: 'Lavoro #{@printjob.name} completato!' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_printjob

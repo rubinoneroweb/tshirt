@@ -35,7 +35,7 @@
         <td><%= printjob.note %></td>
         <td><%= link_to 'O', printjob %></td>
         <td><%= link_to 'E', edit_printjob_path(printjob) %></td>
-        <td><%= link_to 'X', printjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'X', printjob, method: :mark_completed, data: { confirm: 'Vuoi segnare questo lavoro come completo?' } %></td>
       </tr>
     <% end %>
   </tbody>
