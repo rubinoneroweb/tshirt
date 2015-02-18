@@ -8,3 +8,17 @@
 	height: 300px;
 	width: auto;
 }
+
+.cat_remove
+{
+	font-size: 16px;
+	line-height: 10px;
+	
+}
+
+.cat_add
+{
+	@extend .cat_remove;
+	color: #aaaaaa !important;
+	font-style: italic;
+}

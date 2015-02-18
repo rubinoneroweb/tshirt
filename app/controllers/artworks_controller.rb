@@ -28,6 +28,24 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def update_artcat
+    artwork = Artwork.find(params[:id])
+    @artcat = Artcat.find(params[:artcat_id])
+    if artwork.artcat.include? @artcat
+       artwork.artcat.delete(@artcat)
+    else
+       artwork.artcat << @artcat
+    end
+
+   
+    @artcats = artwork.artcat 
+    @artcats_avail = Artcat.all - @artcats
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
 
   # GET /artworks/1
   # GET /artworks/1.json
@@ -41,12 +59,9 @@ class ArtworksController < ApplicationController
 
   # GET /artworks/1/edit
   def edit
-    @artcats = Artcat.all
-     if (params[:artcats])
-      params[:artcats].each do |k,v|
-        @artwork.artcat << Artcat.find(k)
-      end
-    end
+    @artcats = Artwork.find(params[:id]).artcat 
+    @artcats_avail = Artcat.all - @artcats
+    
   end
 
   # POST /artworks

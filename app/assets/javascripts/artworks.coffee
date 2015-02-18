@@ -30,3 +30,25 @@ $ ->
         console.log("AJAX Error: #{textStatus}")
       success: (data, textStatus, jqXHR) ->
            owl.data('owlCarousel').reinit({singleItem : true});
+
+$ ->
+  $(document).on 'click', '.cat_remove', (evt) ->
+    $.ajax
+      url: "update_artcat"
+      data:
+        artcat_id: $(this).data('artcat')
+
+      dataType: "script"
+
+    return false
+
+$ ->
+  $(document).on 'click', '.cat_add', (evt) ->
+    $.ajax
+      url: "update_artcat"
+      data:
+        artcat_id: $(this).data('artcat')
+
+      dataType: "script"
+
+    return false

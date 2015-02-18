@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     collection do
       get 'catalog'
       get 'update_catalog'
+      get 'update_artcat'
     end
   end
 
@@ -29,6 +30,9 @@ Rails.application.routes.draw do
   get 'printjobs/new'
 
   get 'artworks/update_catalog', as: 'update_catalog'
+
+  
+  get '/artworks/:id/update_artcat', to: 'artworks#update_artcat', as: 'update_artcat'
 
   get 'printjobs/new2', as: 'new'
 

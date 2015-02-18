@@ -1,0 +1,14 @@
+<div id="chosen_artcats" class="small-6 column">
+  	<h4>Categorie</h4>	
+  	<% @artcats.each do |artcat| %>
+  	<p class="art_category"><%= link_to artcat.description, "#",  :class=>"cat_remove", :'data-artcat'=> artcat.id %></p>
+    
+    <% end %>
+	</div>
+	<div id="avail_artcats" class="small-6 column">
+	<h4>Categorie Disponibili</h4>	
+  	<% @artcats_avail.each do |artcat| %>
+  	<p class="art_category"><%= link_to artcat.description, "#", :class=>"cat_add", :'data-artcat'=> artcat.id %></p>
+ 	 
+    	<% end %>
+    	</div>
