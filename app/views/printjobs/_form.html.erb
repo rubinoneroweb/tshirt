@@ -69,8 +69,12 @@
   <div class="content" id="panel2">
   <div class="row">
     <div class="field small-6 columns">
+     <%= f.label "Categoria disegno" %>
+
+    <%= select_tag(:city_id, options_for_select(Artcat.all.map { |ac|[ac.description, ac.id]  }, 1)) %>
+
       <%= f.label :artwork_id %>
-      <br>
+      
       <%= f.select :artwork_id, options_for_select(Artwork.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'artwork_select' } %>
       <%= f.label :note %>
       <%= f.text_area :note %>
@@ -89,13 +93,16 @@
       <%= f.check_box :name_behind %>
       <%= f.label :name_behind %></div>
     </div> 
+    <div class="small-12 columns">
+     <%= f.label "Font" %>
     <%= f.select :font_id, options_for_select(Font.all.map{|fn|[fn.name, fn.id]}, 1), {}, { id: 'font_select' } %>
     <%= f.label "Testo" %>
-      <br>
-      <%= f.text_field :lettering %></div>
+     
+      <%= f.text_field :lettering %>
       <%= f.label "Colore Testo" %>
       <%= f.select :font_color, options_for_select(Color.all.map{|cf|[cf.description, cf.id, {:'data-support' => cf.code}]}, 1), {}, { id: 'fontcolor_select'  } %>
-    
+      </div>
+    </div>
   </div> 
     <div class="actions">
       <%= f.submit "Avvia Lavoro", :class =>"button" %></div>
