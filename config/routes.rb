@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
+  get 'static_pages/help'
+
   resources :artcats
 
   resources :fonts
@@ -8,6 +12,7 @@ Rails.application.routes.draw do
       get 'update_mods'
       get 'update_details'
       get 'mark_completed'
+      get 'update_artworks'
     end
   end
 
@@ -16,6 +21,8 @@ Rails.application.routes.draw do
       get 'catalog'
       get 'update_catalog'
       get 'update_artcat'
+      get 'delete_artcat'
+      
     end
   end
 
@@ -33,6 +40,10 @@ Rails.application.routes.draw do
 
   
   get '/artworks/:id/update_artcat', to: 'artworks#update_artcat', as: 'update_artcat'
+  
+  get '/artworks/:id/delete_artcat', to: 'artworks#delete_artcat', as: 'delete_artcat'
+  
+ 
 
   get 'printjobs/new2', as: 'new'
 
@@ -95,7 +106,9 @@ Rails.application.routes.draw do
 
 get 'printjobs/update_mods', :as => 'update_mods'
 get 'printjobs/update_colors_sizes', :as => 'update_colors_sizes'
-root :to => "printjob#new"
+
+
+root 'static_pages#home'
 
 
 end

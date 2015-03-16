@@ -17,3 +17,21 @@
  *= require owl.theme
 
  */
+
+ h1, h2, h3, h4, h5, h6, a, input, th, td
+ {
+ 	font-family: 'Source Code Pro', monospace;
+ }
+
+ a:visited
+ {
+ 	color: #ffffff !important;
+ }
+
+ html
+ {
+ 	font-family: 'Source Code Pro', monospace !important;
+ 	font-size: 1.2rem !important;
+ }
+
+

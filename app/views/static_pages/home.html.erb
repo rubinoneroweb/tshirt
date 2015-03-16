@@ -1,0 +1,27 @@
+<h1>Pannello di controllo</h1>
+<div class="row">
+	<div class="small-12 large-4 columns">
+		<div class="panel">
+			<h2>Negozio</h2>
+			<%= link_to 'Catalogo', "artworks/catalog", :class=>"button expand" %>
+			<%= link_to 'Nuovo Lavoro', "printjobs/new", :class=>"button expand" %>
+		</div>
+
+	</div>
+	<div class="small-12 large-4 columns">
+		<div class="panel">
+			<h2>Laboratorio</h2>
+			<%= link_to 'Elenco lavori', "printjobs", :class=>"button expand" %>
+			<%= link_to 'Nuovo Lavoro', "printjobs/new", :class=>"button expand" %>
+		</div>
+
+	</div>
+	<div class="small-12 large-4 columns">
+		<div class="panel">
+			<h2>BackOffice</h2>
+			<%= link_to 'Tipi', "shapes", :class=>"button expand" %>
+			<%= link_to 'Modelli', "mods", :class=>"button expand" %>
+			<%= link_to 'Disegni', "artworks", :class=>"button expand" %>
+		</div>
+	</div>
+</div>

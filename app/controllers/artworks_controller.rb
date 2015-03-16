@@ -31,11 +31,9 @@ class ArtworksController < ApplicationController
   def update_artcat
     artwork = Artwork.find(params[:id])
     @artcat = Artcat.find(params[:artcat_id])
-    if artwork.artcat.include? @artcat
-       artwork.artcat.delete(@artcat)
-    else
-       artwork.artcat << @artcat
-    end
+    
+    artwork.artcat << @artcat
+    
 
    
     @artcats = artwork.artcat 
@@ -44,6 +42,18 @@ class ArtworksController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  def delete_artcat
+     artwork = Artwork.find(params[:id])
+    @artcat = Artcat.find(params[:artcat_id])
+     artwork.artcat.delete(@artcat)
+
+    @artcats = artwork.artcat 
+    @artcats_avail = Artcat.all - @artcats
+
+    
+
   end
 
 

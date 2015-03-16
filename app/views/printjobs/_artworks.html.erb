@@ -1,0 +1,4 @@
+<option value="">Seleziona un disegno</option>
+<%= @artworks.each do |art|  %>
+<option value="<%= art.id %>"><%= art.description %></option>
+ <% end %>

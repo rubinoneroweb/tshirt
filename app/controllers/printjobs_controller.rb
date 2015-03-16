@@ -28,6 +28,11 @@ class PrintjobsController < ApplicationController
 
   end
 
+  def update_artworks
+    @artworks = Artcat.find(params[:artcat_id]).artwork
+
+  end
+
   def update_details
     @size = Mod.find(params[:mod_id]).size
     @color = Mod.find(params[:mod_id]).color

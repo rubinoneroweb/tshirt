@@ -34,7 +34,7 @@ $ ->
 $ ->
   $(document).on 'click', '.cat_remove', (evt) ->
     $.ajax
-      url: "update_artcat"
+      url: "delete_artcat"
       data:
         artcat_id: $(this).data('artcat')
 

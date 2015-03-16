@@ -64,14 +64,14 @@
 
       </div>
     </div>
-      <a href="#panel2" class="button">Avanti &gt;&gt;</a>
+      <a href="#panel2" class="button right">Avanti &gt;&gt;</a>
   </div>
   <div class="content" id="panel2">
   <div class="row">
     <div class="field small-6 columns">
      <%= f.label "Categoria disegno" %>
 
-    <%= select_tag(:city_id, options_for_select(Artcat.all.map { |ac|[ac.description, ac.id]  }, 1)) %>
+    <%= select_tag(:artcat_select, options_for_select(Artcat.all.map { |ac|[ac.description, ac.id]  }, 0),{:prompt   => "Seleziona una categoria"}) %>
 
       <%= f.label :artwork_id %>
       
@@ -103,9 +103,10 @@
       <%= f.select :font_color, options_for_select(Color.all.map{|cf|[cf.description, cf.id, {:'data-support' => cf.code}]}, 1), {}, { id: 'fontcolor_select'  } %>
       </div>
     </div>
+    <a href="#panel1" class="button">&lt; &lt; Indietro</a>
   </div> 
     <div class="actions">
-      <%= f.submit "Avvia Lavoro", :class =>"button" %></div>
+      <%= f.submit "Avvia Lavoro", :class =>"button large expand" %></div>
     <% end %>
   </div>
 </div>
