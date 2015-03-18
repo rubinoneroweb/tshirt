@@ -23,7 +23,7 @@
  	font-family: 'Source Code Pro', monospace;
  }
 
- a:visited
+ a.button:visited
  {
  	color: #ffffff !important;
  }

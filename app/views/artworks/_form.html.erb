@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label "Nome" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label "Descrizione" %><br>
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :path %><br>
+    <%= f.label "Nome del file" %><br>
     <%= f.text_field :path %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salva disegno", :class=>"button extend"%>
   </div>
 <% end %>

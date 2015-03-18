@@ -33,6 +33,7 @@ $ ->
 
 $ ->
   $(document).on 'click', '.cat_remove', (evt) ->
+    $(this).unbind('click')
     $.ajax
       url: "delete_artcat"
       data:
@@ -44,6 +45,7 @@ $ ->
 
 $ ->
   $(document).on 'click', '.cat_add', (evt) ->
+    $(this).unbind('click')
     $.ajax
       url: "update_artcat"
       data:

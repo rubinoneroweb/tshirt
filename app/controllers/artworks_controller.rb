@@ -39,9 +39,7 @@ class ArtworksController < ApplicationController
     @artcats = artwork.artcat 
     @artcats_avail = Artcat.all - @artcats
 
-    respond_to do |format|
-      format.js
-    end
+    
   end
 
   def delete_artcat
@@ -81,7 +79,7 @@ class ArtworksController < ApplicationController
 
     respond_to do |format|
       if @artwork.save
-        format.html { redirect_to @artwork, notice: 'Artwork was successfully created.' }
+        format.html { redirect_to @artwork, notice: 'Disegno Salvato!' }
         format.json { render :show, status: :created, location: @artwork }
       else
         format.html { render :new }
@@ -95,7 +93,7 @@ class ArtworksController < ApplicationController
   def update
     respond_to do |format|
       if @artwork.update(artwork_params)
-        format.html { redirect_to @artwork, notice: 'Artwork was successfully updated.' }
+        format.html { redirect_to @artwork, notice: 'Disegno modificato!' }
         format.json { render :show, status: :ok, location: @artwork }
       else
         format.html { render :edit }
@@ -109,7 +107,7 @@ class ArtworksController < ApplicationController
   def destroy
     @artwork.destroy
     respond_to do |format|
-      format.html { redirect_to artworks_url, notice: 'Artwork was successfully destroyed.' }
+      format.html { redirect_to artworks_url, notice: 'Disegno cancellato!' }
       format.json { head :no_content }
     end
   end

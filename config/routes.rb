@@ -20,8 +20,8 @@ Rails.application.routes.draw do
     collection do
       get 'catalog'
       get 'update_catalog'
-      get 'update_artcat'
-      get 'delete_artcat'
+      #get 'update_artcat'
+      #get 'delete_artcat'
       
     end
   end

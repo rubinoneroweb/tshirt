@@ -1,4 +1,4 @@
-<h1>Impostazioni Disegno</h1>
+<h1>Aggiungi categorie</h1>
 
 <%= form_for(@artwork) do |f| %>
   <% if @artwork.errors.any? %>
@@ -13,13 +13,12 @@
     </div>
   <% end %>
 
+  <h3>
+    <%= @artwork.name %>
+  </h3>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+   
+    <%= @artwork.description %>
   </div>
   <div >
   <%= image_tag "catalog/"+@artwork.path, :class=>"thumb" %>
@@ -41,7 +40,7 @@
     	</div>
 	</div>
   <div class="actions">
-    <%= f.submit "Aggiorna Dati", :class=>"button" %>
+    <%= f.submit "Aggiorna Dati", :class=>"button", :style=>"display:none;" %>
   </div>
 
 
