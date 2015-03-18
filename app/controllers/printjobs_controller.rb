@@ -100,6 +100,6 @@ class PrintjobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def printjob_params
-      params.require(:printjob).permit(:name, :shape_id, :mod_id, :color_id, :size_id, :artwork_id, :diamond, :name_under, :name_behind)
+      params.require(:printjob).permit(:name, :shape_id, :mod_id, :color_id, :size_id, :artwork_id, :diamond, :name_under, :name_behind, :lettering, :caption, :font_id, :price, :ready, :archive, :font_color)
     end
 end

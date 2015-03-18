@@ -1,48 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @printjob.name %>
-</p>
+<h3>
+   <%= @printjob.name %>
+</h3>
 
 <p>
-  <strong>Shape:</strong>
+  <strong>Tipo:</strong>
   <%= @printjob.shape.description %>
 </p>
 
 <p>
-  <strong>Mod:</strong>
+  <strong>Modello:</strong>
   <%= @printjob.mod.description %>
 </p>
 
 <p>
-  <strong>Color:</strong>
+  <strong>Colore:</strong>
   <%= @printjob.color.description %> 
 </p>
 
 <p>
-  <strong>Size:</strong>
+  <strong>Taglia:</strong>
   <%= @printjob.size.description %>
 </p>
 
 <p>
-  <strong>Artwork:</strong>
-  <%= @printjob.artwork_id %>
+  <strong>Disegno:</strong>
+  <%= @printjob.artwork.name %>
 </p>
 
 <p>
-  <strong>Diamond:</strong>
-  <%= @printjob.diamond %>
+  <strong>Strass:</strong>
+  <%= @printjob.diamond ? "Sì" : "No" %>
 </p>
 
 <p>
-  <strong>Name under:</strong>
-  <%= @printjob.name_under %>
+  <strong>Nome sotto:</strong>
+  <%= @printjob.name_under ? "Sì" : "No"  %>
 </p>
 
 <p>
-  <strong>Name behind:</strong>
-  <%= @printjob.name_behind %>
+  <strong>Nome dietro:</strong>
+  <%= @printjob.name_behind ? "Sì" : "No" %>
 </p>
 
 <p>
@@ -50,5 +49,14 @@
   <%= @printjob.note %>
 </p>
 
-<%= link_to 'Edit', edit_printjob_path(@printjob), :class=>"button" %> |
-<%= link_to 'Back', printjobs_path,  :class=>"button" %>
+<p>
+  <strong>Testo:</strong>
+  <%= @printjob.caption %>
+</p>
+
+<p>
+  <strong>Font:</strong>
+  <%= Font.find(@printjob.font_id).name %>
+</p>
+
+<%= link_to 'Elenco Lavori', printjobs_path,  :class=>"button" %>

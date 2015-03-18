@@ -1,12 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%=  @artwork.name %>
-</p>
+
+<h3> <%=  @artwork.name %></h3>
+
 
 <p>
-  <strong>Description:</strong>
+  
   <%= @artwork.description %>
 </p>
 
@@ -14,5 +13,5 @@
   <%= image_tag "catalog/"+@artwork.path %>
 </p>
 
-<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-<%= link_to 'Back', artworks_path %>
+
+<%= link_to 'Torna a elenco Disegni', artworks_path, :class=>"button expand" %>
