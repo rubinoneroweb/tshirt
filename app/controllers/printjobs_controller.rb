@@ -33,6 +33,11 @@ class PrintjobsController < ApplicationController
 
   end
 
+  def update_art
+    @artwork_path = Artwork.find(params[:artwork_id]).path
+
+  end
+
   def update_details
     @size = Mod.find(params[:mod_id]).size
     @color = Mod.find(params[:mod_id]).color
