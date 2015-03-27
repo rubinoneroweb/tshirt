@@ -28,3 +28,17 @@
 	color: #aaaaaa !important;
 	font-style: italic;
 }
+
+.next, .prev
+{
+	height: 600px;
+	background-color: #fafafa;
+}
+
+.next > p, .prev > p
+{
+	position: absolute;
+	top: 50%;
+	font-size: 2rem;
+	color: gainsboro;
+}

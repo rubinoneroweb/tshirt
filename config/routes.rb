@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'update_details'
       get 'mark_completed'
       get 'update_artworks'
+      get 'update_art'
     end
   end
 

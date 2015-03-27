@@ -29,6 +29,16 @@ ready = ->
 
     return
 
+  $("#artwork_select").change ->
+    $.ajax
+      url: "update_art"
+      data:
+        artwork_id: $("#artwork_select").val()
+
+      dataType: "script"
+
+    return
+
   $("#colors_select").change ->
     selected = $(this).find('option:selected');
 

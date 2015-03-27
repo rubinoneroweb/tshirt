@@ -1,6 +1,7 @@
 <% @artworks.each do |artwork| %>
-	      <div id="catalog_container">
-	      	<h3 class="text-center"><%= artwork.description %></h3>
+	      <div id="catalog_container" class="text-center">
+	      
 	      	 <%= image_tag "catalog/"+artwork.path %>
+	      	 <br>	<%= artwork.description %>
 	      </div>
 	<% end %>
