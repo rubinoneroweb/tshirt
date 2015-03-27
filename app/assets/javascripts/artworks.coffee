@@ -40,6 +40,21 @@ $ ->
            owl.data('owlCarousel').reinit({singleItem : true});
 
 $ ->
+  $(document).on 'click', '.cat', (evt) ->
+    $.ajax 'update_catalog',
+      format: 'js',
+      type: 'GET'
+      dataType: 'script'
+      data: {
+        artcat_id: $(this).data("artcat")
+      }
+      error: (jqXHR, textStatus, errorThrown) ->
+        console.log("AJAX Error: #{textStatus}")
+      success: (data, textStatus, jqXHR) ->
+           owl.data('owlCarousel').reinit({singleItem : true});
+
+
+$ ->
   $(document).on 'click', '.cat_remove', (evt) ->
     $(this).unbind('click')
     $.ajax

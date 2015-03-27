@@ -10,7 +10,7 @@ class ArtworksController < ApplicationController
   def catalog
     @artworks = Artwork.all
     @artcats = Artcat.all
-    if params[:artcat_id]
+    if params[:artcat_id] 
       @artworks = Artcat.find(params[:artcat_id]).artwork
 
     end
@@ -19,7 +19,7 @@ class ArtworksController < ApplicationController
    def update_catalog
     @artcats = Artcat.all
     @artworks = Artwork.all
-    if params[:artcat_id].present?
+    if params[:artcat_id].present? && params[:artcat_id].to_i > 0
       @artworks = Artcat.find(params[:artcat_id]).artwork
 
     end

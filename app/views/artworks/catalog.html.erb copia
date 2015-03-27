@@ -1,16 +1,8 @@
-<div class="text-center">
 <h1>Catalogo</h1>
+<label>
+	Scegli una categoria
+	<%= select("artcat_select", "artcat_id", @artcats.collect { |a| [a.description, a.id]  }, {include_blank: "Tutte"},{id: "artcat_select"}) %></label>
 
-	<h4>Scegli una categoria</h4><br>
-	
-	<% @artcats.each do |artcat| %>
-
-	<a class="button cat" data-artcat="<%= artcat.id %>"> <%= artcat.description %></a>
-
-	<% end %>
-
-	<a class="button cat" data-artcat="0"> Tutte </a>
-</div>
 <div class="row">
 	<div class="small-1 columns prev ">
 		<p>
