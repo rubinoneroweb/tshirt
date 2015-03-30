@@ -6,10 +6,10 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Shape</th>
-      <th>Mod</th>
-      <th>Color</th>
-      <th>Size</th>
+      <th>Modello</th>
+      
+      <th>Colore/
+      <br>Taglia</th>
       <th colspan="2">Artwork</th>
       <th>Strass</th>
       <th>Nome sotto</th>
@@ -23,12 +23,11 @@
     <% @printjobs.each do |printjob| %>
       <tr>
         <td><%= printjob.name %></td>
-        <td><%= printjob.shape.description %></td>
-        <td><%= printjob.mod.description %></td>
-        <td><%= printjob.color.description %></td>
-        <td><%= printjob.size.description %></td>
-        <td><%= image_tag 'catalog/'+ printjob.artwork.path, :class =>'thumb_art' %></td>
-        <td><%= printjob.artwork.name%></td>
+        <td><%= printjob.shape.description %><br><%= printjob.mod.description %></td>
+        <td><%= printjob.color.description %>
+        <br><%= printjob.size.description %></td>
+        <td><%= image_tag 'catalog/'+ (printjob.artwork ? printjob.artwork.path : "notfound.jpg"), :class =>'thumb_art' %></td>
+        <td><%= printjob.artwork ? printjob.artwork.name : "Disegno inesistente" %></td>
         <td><%= printjob.diamond  ? "si" : "no" %></td>
         <td><%= printjob.name_under ? "si" : "no" %></td>
         <td><%= printjob.name_behind  ? "si" : "no"  %></td>

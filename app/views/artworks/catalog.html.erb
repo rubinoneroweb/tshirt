@@ -1,15 +1,15 @@
 <div class="text-center">
-<h1>Catalogo</h1>
 
-	<h4>Scegli una categoria</h4><br>
+
+
 	
 	<% @artcats.each do |artcat| %>
 
-	<a class="button cat" data-artcat="<%= artcat.id %>"> <%= artcat.description %></a>
+	<a class="button small cat" data-artcat="<%= artcat.id %>"> <%= artcat.description.upcase %></a>
 
 	<% end %>
 
-	<a class="button cat" data-artcat="0"> Tutte </a>
+	<a class="button small cat" data-artcat="0"> TUTTE - ALL </a>
 </div>
 <div class="row">
 	<div class="small-1 columns prev ">
@@ -24,7 +24,7 @@
 
 				<%= image_tag "catalog/"+artwork.path %>
 				<br>
-				<%= artwork.name %></div>
+				<h4><%= artwork.name.upcase %></h4></div>
 			<% end %></div>
 	</div>
 
