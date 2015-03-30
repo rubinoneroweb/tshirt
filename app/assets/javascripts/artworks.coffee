@@ -56,6 +56,8 @@ $ ->
 
 $ ->
   $(document).on 'click', '.cat_remove', (evt) ->
+    evt.stopPropagation();
+    evt.preventDefault();
     $(this).unbind('click')
     $.ajax
       url: "delete_artcat"
@@ -68,6 +70,8 @@ $ ->
 
 $ ->
   $(document).on 'click', '.cat_add', (evt) ->
+    evt.stopPropagation();
+    evt.preventDefault();
     $(this).unbind('click')
     $.ajax
       url: "update_artcat"
