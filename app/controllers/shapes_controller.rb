@@ -28,7 +28,7 @@ class ShapesController < ApplicationController
 
     respond_to do |format|
       if @shape.save
-        format.html { redirect_to @shape, notice: 'Shape was successfully created.' }
+        format.html { redirect_to @shape, notice: 'Tipo maglia aggiunto.' }
         format.json { render :show, status: :created, location: @shape }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ShapesController < ApplicationController
   def update
     respond_to do |format|
       if @shape.update(shape_params)
-        format.html { redirect_to @shape, notice: 'Shape was successfully updated.' }
+        format.html { redirect_to @shape, notice: 'Tipo maglia modificato.' }
         format.json { render :show, status: :ok, location: @shape }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ShapesController < ApplicationController
   def destroy
     @shape.destroy
     respond_to do |format|
-      format.html { redirect_to shapes_url, notice: 'Shape was successfully destroyed.' }
+      format.html { redirect_to shapes_url, notice: 'Tipo maglia eliminato.' }
       format.json { head :no_content }
     end
   end

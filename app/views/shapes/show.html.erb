@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrizione:</strong>
   <%= @shape.description %>
 </p>
 
-<%= link_to 'Edit', edit_shape_path(@shape) %> |
-<%= link_to 'Back', shapes_path %>
+<%= link_to 'Modifica', edit_shape_path(@shape), :class=>"button large" %> 
+<%= link_to 'Torna a Elenco', shapes_path, :class=>"button large" %>

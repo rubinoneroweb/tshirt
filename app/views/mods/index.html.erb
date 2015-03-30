@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Mods</h1>
+<h1>Elenco Modelli</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Shape</th>
-      <th>Description</th>
+      <th>Tipo</th>
+      <th>Descrizione</th>
+      <th>Taglie</th>
+      <th>Colori</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +18,11 @@
       <tr>
         <td><%= mod.shape.description %></td>
         <td><%= mod.description %></td>
-        <td><%= link_to 'Show', mod %></td>
-        <td><%= link_to 'Edit', edit_mod_path(mod) %></td>
-        <td><%= link_to 'Destroy', mod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= mod.size.map{|s| s.description}.join(", ") %></td>
+        <td><%= mod.color.map{|c| c.description}.join(", ") %></td>
+        <td><%= link_to 'Modifica', edit_mod_path(mod) %></td>
+        <td><%= link_to 'Colori/Taglie', mod %></td>
+        <td><%= link_to 'Elimina', mod, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Mod', new_mod_path %>
+<%= link_to 'Aggiungi Nuovo', new_mod_path, :class=>"button large" %>  <%= link_to 'Torna al pannello di controllo', root_path , :class=>"button large" %>

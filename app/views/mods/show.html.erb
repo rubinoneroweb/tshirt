@@ -1,14 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Shape:</strong>
-  <%= @mod.shape_id %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @mod.description %>
-</p>
+  <h3>
+  <%= @mod.shape.description %> / <%= @mod.description %> </h3>
+  
+
 
 
 <table>
@@ -24,7 +20,7 @@
       <tr>
         <td><%= size.description %></td>
        
-        <td><%= link_to 'Destroy', size, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Elimina', delete_size_mod_path(:size => size.id), :method => :get %></td>
       </tr>
     <% end %>
   </tbody>

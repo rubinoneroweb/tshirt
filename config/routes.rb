@@ -31,7 +31,13 @@ Rails.application.routes.draw do
 
   resources :colors
 
-  resources :mods
+  resources :mods do
+    member do
+      
+      get :delete_size
+      
+    end
+  end
 
   resources :shapes
 

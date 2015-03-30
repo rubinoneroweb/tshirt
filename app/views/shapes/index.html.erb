@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Shapes</h1>
+<h1>Tipi Maglia</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
+      <th>Descrizione</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -14,9 +14,8 @@
     <% @shapes.each do |shape| %>
       <tr>
         <td><%= shape.description %></td>
-        <td><%= link_to 'Show', shape %></td>
-        <td><%= link_to 'Edit', edit_shape_path(shape) %></td>
-        <td><%= link_to 'Destroy', shape, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Modifica', edit_shape_path(shape) %></td>
+        <td><%= link_to 'Elimina', shape, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Shape', new_shape_path %>
+<%= link_to 'Aggiungi Nuovo', new_shape_path, :class=>"button large" %>  <%= link_to 'Torna al pannello di controllo', root_path , :class=>"button large" %>
