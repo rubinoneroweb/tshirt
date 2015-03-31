@@ -2,6 +2,8 @@
 
 <h1>Coda di Stampa</h1>
 
+<%= link_to 'Mostra/nascondi archiviati', '#', :class=>'button small ', :id=> 'arch_switch' %>
+
 <table>
   <thead>
     <tr>
@@ -15,13 +17,14 @@
       <th>Nome sotto</th>
       <th>Nome dietro</th>
       <th>Note</th>
+      <th>Font</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @printjobs.each do |printjob| %>
-      <tr>
+      <tr <%= if printjob.archived then "class=arch" end  %> >
         <td><%= printjob.name %></td>
         <td><%= printjob.shape.description %><br><%= printjob.mod.description %></td>
         <td><%= printjob.color.description %>
@@ -32,9 +35,10 @@
         <td><%= printjob.name_under ? "si" : "no" %></td>
         <td><%= printjob.name_behind  ? "si" : "no"  %></td>
         <td><%= printjob.note %></td>
+        <td><%= if printjob.font_id then printjob.font.name end%></td>
         <td><%= link_to 'O', printjob %></td>
         <td><%= link_to 'E', edit_printjob_path(printjob) %></td>
-        <td><%= link_to 'X', printjob, method: :mark_completed, data: { confirm: 'Vuoi segnare questo lavoro come completo?' } %></td>
+        <td><%= link_to 'X', printjob, method: :delete, data: { confirm: ( printjob.archived ? "Eliminare?" : "Vuoi segnare questo lavoro come archiviato?") } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -39,6 +39,9 @@ ready = ->
 
     return
 
+  $("#arch_switch").click ->
+    $(".arch").toggle("slow");
+
   $("#colors_select").change ->
     selected = $(this).find('option:selected');
 

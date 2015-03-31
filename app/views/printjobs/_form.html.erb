@@ -25,7 +25,7 @@
     <div class="field">
       <%= f.label "Nome" %>
       <br>
-      <%= f.text_field :name %></div>
+      <%= f.text_field :name, :required => true %></div>
 
     <div class="row">
       <div class="field small-6 columns">
@@ -35,7 +35,7 @@
       <div class="field  small-6 columns">
         <%= f.label "Modello" %>
         <br>
-        <%= f.select(:mod_id,  '',  {:prompt   =>"Seleziona un modello"}, {:id => 'mods_select'}) %></div>
+        <%= f.select(:mod_id,  '',  {:prompt   =>"Seleziona un modello"}, {:id => 'mods_select', :required =>true}) %></div>
 
     </div>
 
@@ -44,12 +44,12 @@
       <div class="field small-4 columns">
         <%= f.label "Colore" %>
         <br>
-        <%= f.select(:color_id,  '',   {:prompt   =>"Seleziona un colore"}, {:id => 'colors_select'}) %></div>
+        <%= f.select(:color_id,  '',   {:prompt   =>"Seleziona un colore"}, {:id => 'colors_select', :required => true}) %></div>
 
       <div class="field small-6 columns">
         <%= f.label "Taglia" %>
         <br>
-        <%= f.select(:size_id,  '',   {:prompt   =>"Seleziona una taglia"}, {:id => 'sizes_select'}) %></div>
+        <%= f.select(:size_id,  '',   {:prompt   =>"Seleziona una taglia"}, {:id => 'sizes_select', :required => true}) %></div>
     </div>
     <a href="#panel2" class="button right">Avanti &gt;&gt;</a>
   </div>
@@ -62,7 +62,7 @@
         "Seleziona una categoria"}) %>
         <%= f.label :artwork_id %>
 
-        <%= f.select :artwork_id, options_for_select(Artwork.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'artwork_select' } %>
+        <%= f.select :artwork_id, options_for_select(Artwork.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'artwork_select',:required => true } %>
         <%= f.label :note %>
         <%= f.text_area :note %></div>
       <div class="small-3 columns">

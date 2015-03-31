@@ -4,6 +4,7 @@ class PrintjobsController < ApplicationController
   # GET /printjobs
   # GET /printjobs.json
   def index
+    #@printjobs = Printjob.where("archived IS ?", nil)
     @printjobs = Printjob.all
   end
 
@@ -82,11 +83,22 @@ class PrintjobsController < ApplicationController
   # DELETE /printjobs/1
   # DELETE /printjobs/1.json
   def destroy
-    @printjob.destroy
-    respond_to do |format|
-      format.html { redirect_to printjobs_url, notice: 'Printjob was successfully destroyed.' }
-      format.json { head :no_content }
+    if  @printjob.archived
+      @printjob.destroy
+        respond_to do |format|
+        format.html { redirect_to printjobs_url, notice: 'Lavoro Eliminato.' }
+        format.json { head :no_content }
+      end
+      
+    else
+      @printjob.archive
+      respond_to do |format|
+        format.html { redirect_to printjobs_url, notice: 'Lavoro Archiviato.' }
+        format.json { head :no_content }
+      end
+      
     end
+    
   end
 
   def mark_completed

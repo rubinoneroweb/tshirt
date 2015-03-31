@@ -15,7 +15,7 @@
 
   <tbody>
     <% @mods.each do |mod| %>
-      <tr>
+      <tr >
         <td><%= mod.shape.description %></td>
         <td><%= mod.description %></td>
         <td><%= mod.size.map{|s| s.description}.join(", ") %></td>
