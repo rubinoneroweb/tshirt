@@ -1,0 +1,4 @@
+<option value="">Seleziona un modello</option>
+<%= @shirts.each do |shirt|  %>
+<option value="<%= shirt.id %>"><%= shirt.description %></option>
+ <% end %>

@@ -27,6 +27,7 @@ class ModsController < ApplicationController
   # POST /mods
   # POST /mods.json
   def create
+    #byebug
     @mod = Mod.new(mod_params)
 
     respond_to do |format|

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209165642) do
+ActiveRecord::Schema.define(version: 20150401151831) do
 
   create_table "artcats", force: :cascade do |t|
     t.string   "description"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20150209165642) do
     t.float    "price"
     t.integer  "font_color"
     t.string   "lettering"
+    t.integer  "shirt_id"
   end
 
   create_table "shapes", force: :cascade do |t|
@@ -101,6 +102,30 @@ ActiveRecord::Schema.define(version: 20150209165642) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "shirts", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "shape_id"
+    t.string   "path"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "shirts_and_colors", force: :cascade do |t|
+    t.integer "shirt_id"
+    t.integer "color_id"
+  end
+
+  add_index "shirts_and_colors", ["color_id"], name: "index_shirts_and_colors_on_color_id"
+  add_index "shirts_and_colors", ["shirt_id"], name: "index_shirts_and_colors_on_shirt_id"
+
+  create_table "shirts_and_sizes", force: :cascade do |t|
+    t.integer "shirt_id"
+    t.integer "size_id"
+  end
+
+  add_index "shirts_and_sizes", ["shirt_id"], name: "index_shirts_and_sizes_on_shirt_id"
+  add_index "shirts_and_sizes", ["size_id"], name: "index_shirts_and_sizes_on_size_id"
 
   create_table "sizes", force: :cascade do |t|
     t.string   "description"

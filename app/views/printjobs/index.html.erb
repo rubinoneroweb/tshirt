@@ -18,6 +18,7 @@
       <th>Nome dietro</th>
       <th>Note</th>
       <th>Font</th>
+      <th>testo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,7 +27,7 @@
     <% @printjobs.each do |printjob| %>
       <tr <%= if printjob.archived then "class=arch" end  %> >
         <td><%= printjob.name %></td>
-        <td><%= printjob.shape.description %><br><%= printjob.mod.description %></td>
+        <td><%= printjob.shape.description %><br><%= printjob.shirt.description %></td>
         <td><%= printjob.color.description %>
         <br><%= printjob.size.description %></td>
         <td><%= image_tag 'catalog/'+ (printjob.artwork ? printjob.artwork.path : "notfound.jpg"), :class =>'thumb_art' %></td>
@@ -36,6 +37,8 @@
         <td><%= printjob.name_behind  ? "si" : "no"  %></td>
         <td><%= printjob.note %></td>
         <td><%= if printjob.font_id then printjob.font.name end%></td>
+        
+        <td><%= printjob.lettering %></td>
         <td><%= link_to 'O', printjob %></td>
         <td><%= link_to 'E', edit_printjob_path(printjob) %></td>
         <td><%= link_to 'X', printjob, method: :delete, data: { confirm: ( printjob.archived ? "Eliminare?" : "Vuoi segnare questo lavoro come archiviato?") } %></td>

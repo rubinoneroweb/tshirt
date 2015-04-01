@@ -11,7 +11,7 @@
 
 <p>
   <strong>Modello:</strong>
-  <%= @printjob.mod.description %>
+  <%= @printjob.shirt.description %>
 </p>
 
 <p>
@@ -26,7 +26,8 @@
 
 <p>
   <strong>Disegno:</strong>
-  <%= @printjob.artwork.name %>
+  <%= @printjob.artwork.name %><br>
+  <%= image_tag 'catalog/'+ (@printjob.artwork ? @printjob.artwork.path : "notfound.jpg"), :class =>'thumb' %>
 </p>
 
 <p>
@@ -51,7 +52,7 @@
 
 <p>
   <strong>Testo:</strong>
-  <%= @printjob.caption %>
+  <%= @printjob.lettering %>
 </p>
 
 <p>

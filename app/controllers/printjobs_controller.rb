@@ -16,7 +16,7 @@ class PrintjobsController < ApplicationController
   # GET /printjobs/new
   def new
     @printjob = Printjob.new
-    @mods = Mod.where("shape_id = ?", params[:shape_id])
+    @shirts = Shirt.where("shape_id = ?", params[:shape_id])
     @color = Color.where("id = ?", params[:color_id])
     #@colors = Color.all
     #@sizes = Size.all
@@ -24,8 +24,9 @@ class PrintjobsController < ApplicationController
   end
 
 
-  def update_mods
-    @mods = Mod.where("shape_id = ?", params[:shape_id])
+  def update_shirts
+    #@mods = Mod.where("shape_id = ?", params[:shape_id])
+    @shirts = Shirt.where("shape_id = ?", params[:shape_id])
 
   end
 
@@ -40,8 +41,8 @@ class PrintjobsController < ApplicationController
   end
 
   def update_details
-    @size = Mod.find(params[:mod_id]).size
-    @color = Mod.find(params[:mod_id]).color
+    @size = Shirt.find(params[:shirt_id]).size
+    @color = Shirt.find(params[:shirt_id]).color
   end
   
 
@@ -117,6 +118,6 @@ class PrintjobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def printjob_params
-      params.require(:printjob).permit(:name, :shape_id, :mod_id, :color_id, :size_id, :artwork_id, :diamond, :name_under, :name_behind, :lettering, :caption, :font_id, :price, :ready, :archive, :font_color)
+      params.require(:printjob).permit(:name, :shape_id, :mod_id, :shirt_id, :color_id, :size_id, :artwork_id, :diamond, :name_under, :name_behind, :lettering, :caption, :font_id, :price, :ready, :archive, :font_color, :note)
     end
 end

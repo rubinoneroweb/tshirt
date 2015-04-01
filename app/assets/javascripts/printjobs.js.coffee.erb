@@ -1,7 +1,7 @@
 ready = ->
   $("#shapes_select").change ->
     $.ajax
-      url: "update_mods"
+      url: "update_shirts"
       data:
         shape_id: $("#shapes_select").val()
 
@@ -9,11 +9,11 @@ ready = ->
 
     return
 
-  $("#mods_select").change ->
+  $("#shirts_select").change ->
     $.ajax
       url: "update_details"
       data:
-        mod_id: $("#mods_select").val()
+        shirt_id: $("#shirts_select").val()
 
       dataType: "script"
 

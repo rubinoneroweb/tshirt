@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sizes
+
   get 'static_pages/home'
 
   get 'static_pages/help'
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :printjobs do
     collection do
-      get 'update_mods'
+      get 'update_shirts'
       get 'update_details'
       get 'mark_completed'
       get 'update_artworks'
@@ -27,7 +29,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :sizes
+  resources :shirts do
+    member do
+      get :update_size
+      get :update_color
+  end
+  end
 
   resources :colors
 

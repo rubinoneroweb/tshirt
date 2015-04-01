@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h3><%= @shirt.shape.description %> /   <%= @shirt.description %> </h3>
+
+</p>
+
+<h5>Taglie disponibili</h5>
+<table>
+	<thead>
+		<tr>
+			<th>Descrizione</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		 <% @shirt.size.each do |size| %>
+		 <tr>
+		 	<td>
+		 		<%= size.description %>
+		 	</td>
+		 	<td>
+		 		<%= link_to 'Elimina', update_size_shirt_path(:size => size.id), :method => :get %> 
+		 	</td>
+		 </tr>
+		 <% end %>
+	</tbody>
+</table>
+<h5>Aggiungi taglia:</h5>
+ <% @avail_sizes.each do |a_size| %>
+ <%= link_to a_size.description, update_size_shirt_path(:size => a_size.id), :method => :get, :class=>"button small" %>
+ <% end %>
+<hr>
+<h5>Colori disponibili</h5>
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>Descrizione</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		 <% @shirt.color.each do |color| %>
+		 <tr>
+		 	<td style="background-color: <%= color.code %>;"></td>
+		 	<td>
+		 		<%= color.description %>
+		 	</td>
+		 	<td>
+		 		<%= link_to 'Elimina', update_color_shirt_path(:color => color.id), :method => :get %> 
+		 	</td>
+		 </tr>
+		 <% end %>
+	</tbody>
+</table>
+<h5>Aggiungi colore:</h5>
+ <% @avail_colors.each do |a_color| %>
+ <%= link_to a_color.description, update_color_shirt_path(:color => a_color.id), :method => :get, :class=>"button small" %>
+ <% end %>
+
+<hr>
+<br>
+<%= link_to 'Modifica', edit_shirt_path(@shirt), :class => "button large" %> 
+<%= link_to 'Torna Elenco Modelli', shirts_path, :class => "button large" %>

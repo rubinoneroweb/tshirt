@@ -31,11 +31,11 @@
       <div class="field small-6 columns">
         <%= f.label "Tipo" %>
         <br>
-        <%= f.select :shape_id, options_for_select(Shape.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'shapes_select' } %></div>
+        <%= f.select :shape_id, options_for_select(Shape.all.map{|s|[s.description, s.id]}, 0), {:prompt   =>"Seleziona un tipo"}, { id: 'shapes_select' } %></div>
       <div class="field  small-6 columns">
         <%= f.label "Modello" %>
         <br>
-        <%= f.select(:mod_id,  '',  {:prompt   =>"Seleziona un modello"}, {:id => 'mods_select', :required =>true}) %></div>
+        <%= f.select(:shirt_id,  '',  {:prompt   =>"Seleziona un modello"}, {:id => 'shirts_select', :required =>true}) %></div>
 
     </div>
 
@@ -62,7 +62,7 @@
         "Seleziona una categoria"}) %>
         <%= f.label :artwork_id %>
 
-        <%= f.select :artwork_id, options_for_select(Artwork.all.map{|s|[s.description, s.id]}, 1), {}, { id: 'artwork_select',:required => true } %>
+        <%= f.select :artwork_id, options_for_select(Artwork.all.map{|s|[s.name, s.id]}, 1), {}, { id: 'artwork_select',:required => true } %>
         <%= f.label :note %>
         <%= f.text_area :note %></div>
       <div class="small-3 columns">
