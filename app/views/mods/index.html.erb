@@ -16,7 +16,7 @@
   <tbody>
     <% @mods.each do |mod| %>
       <tr >
-        <td><%= mod.shape.description %></td>
+        <td><%= if mod.shape then mod.shape.description else "Tipo inesistente" end %></td>
         <td><%= mod.description %></td>
         <td><%= mod.size.map{|s| s.description}.join(", ") %></td>
         <td><%= mod.color.map{|c| c.description}.join(", ") %></td>

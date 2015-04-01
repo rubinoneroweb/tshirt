@@ -2,7 +2,7 @@
 
 
   <h3>
-  <%= @mod.shape.description %> / <%= @mod.description %> </h3>
+  <%= if @mod.shape then @mod.shape.description else "Tipo inesistente" end %> / <%= @mod.description %> </h3>
   
 
 

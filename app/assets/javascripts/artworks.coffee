@@ -56,6 +56,7 @@ $ ->
 
 $ ->
   $(document).on 'click', '.cat_remove', (evt) ->
+
     evt.stopPropagation();
     evt.preventDefault();
     $(this).unbind('click')
@@ -70,6 +71,7 @@ $ ->
 
 $ ->
   $(document).on 'click', '.cat_add', (evt) ->
+
     evt.stopPropagation();
     evt.preventDefault();
     $(this).unbind('click')
@@ -81,3 +83,6 @@ $ ->
       dataType: "script"
 
     return false
+
+
+

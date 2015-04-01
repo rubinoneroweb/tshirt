@@ -13,8 +13,7 @@
 
   <div class="field">
     <%= f.label :Tipo %><br>
-    <%= select("mod", "shape_id", Shape.all.collect {|s| [ s.description, s.id ] })
-     %>
+     <%= f.text_field :shape_id %>
   </div>
   <div class="field">
     <%= f.label :descrizione %><br>

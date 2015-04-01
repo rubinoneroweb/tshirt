@@ -32,7 +32,10 @@ class ArtworksController < ApplicationController
     artwork = Artwork.find(params[:id])
     @artcat = Artcat.find(params[:artcat_id])
     
-    artwork.artcat << @artcat
+    unless artwork.artcat.include?(@artcat)
+      artwork.artcat << @artcat
+    end
+    
     
 
    
