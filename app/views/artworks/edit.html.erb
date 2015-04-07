@@ -16,10 +16,27 @@
   <h3>
     <%= @artwork.name %>
   </h3>
-  <div class="field">
-   
-    <%= @artwork.description %>
+  <div class="row">
+    <div class="field small-4 columns">
+      <%= f.label "Nome" %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field small-4 columns">
+      <%= f.label "Descrizione" %><br>
+      <%= f.text_field :description %>
+    </div>
+  
+  
+
+  <div class="actions small-4 columns">
+  <%= f.label " " %><br>
+    <%= f.submit "Aggiorna Dati", :class=>"button" %>
   </div>
+
+</div>
+
+<% end %>
+
   <div >
   <%= image_tag "catalog/"+@artwork.path, :class=>"thumb" %>
 	</div>
@@ -39,12 +56,6 @@
     	<% end %>
     	</div>
 	</div>
-  <div class="actions">
-    <%= f.submit "Aggiorna Dati", :class=>"button", :style=>"display:none;" %>
-  </div>
 
-
-
-<% end %>
 
 <%= link_to 'Torna a lista disegni', artworks_path, :class=>"button" %>
