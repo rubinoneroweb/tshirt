@@ -31,7 +31,7 @@
         <td><%= printjob.color.description %>
         <br><%= printjob.size.description %></td>
         <td><%= image_tag 'catalog/'+ (printjob.artwork ? printjob.artwork.path : "notfound.jpg"), :class =>'thumb_art' %></td>
-        <td><%= printjob.artwork ? printjob.artwork.name : "Disegno inesistente" %></td>
+        <td><%= printjob.artwork ? printjob.artwork.name : "Nessuno" %></td>
         <td><%= printjob.diamond  ? "si" : "no" %></td>
         <td><%= printjob.name_under ? "si" : "no" %></td>
         <td><%= printjob.name_behind  ? "si" : "no"  %></td>

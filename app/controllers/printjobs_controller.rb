@@ -5,7 +5,7 @@ class PrintjobsController < ApplicationController
   # GET /printjobs.json
   def index
     #@printjobs = Printjob.where("archived IS ?", nil)
-    @printjobs = Printjob.all
+    @printjobs = Printjob.all.order("created_at DESC")
   end
 
   # GET /printjobs/1

@@ -62,7 +62,7 @@
         "Seleziona una categoria"}) %>
         <%= f.label :artwork_id %>
 
-        <%= f.select :artwork_id, options_for_select(Artwork.all.map{|s|[s.name, s.id]}, 1), {}, { id: 'artwork_select',:required => true } %>
+        <%= f.select :artwork_id, options_for_select(Artwork.all.map{|s|[s.name, s.id]}, 0), {:prompt   => "Seleziona un disegno" }, { id: 'artwork_select'} %>
         <%= f.label :note %>
         <%= f.text_area :note %></div>
       <div class="small-3 columns">

@@ -26,7 +26,7 @@
 
 <p>
   <strong>Disegno:</strong>
-  <%= @printjob.artwork.name %><br>
+  <%= @printjob.artwork ? @printjob.artwork.name : "Nessuno" %><br>
   <%= image_tag 'catalog/'+ (@printjob.artwork ? @printjob.artwork.path : "notfound.jpg"), :class =>'thumb' %>
 </p>
 
