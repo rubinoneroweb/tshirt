@@ -41,6 +41,8 @@ $ ->
 
 $ ->
   $(document).on 'click', '.cat', (evt) ->
+    $(".cat").removeClass("alert")
+    $(this).addClass("alert")
     $.ajax 'update_catalog',
       format: 'js',
       type: 'GET'

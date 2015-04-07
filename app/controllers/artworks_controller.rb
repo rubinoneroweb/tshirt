@@ -20,7 +20,9 @@ class ArtworksController < ApplicationController
     @artcats = Artcat.all
     @artworks = Artwork.all
     if params[:artcat_id].present? && params[:artcat_id].to_i > 0
-      @artworks = Artcat.find(params[:artcat_id]).artwork
+      @ch_artcat = Artcat.find(params[:artcat_id])
+      @artworks = @ch_artcat.artwork.order("name")
+
 
     end
     respond_to do |format|
