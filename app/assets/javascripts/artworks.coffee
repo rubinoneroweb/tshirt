@@ -10,12 +10,13 @@ booleanValue = false
 
 #init carousel
 owl.owlCarousel({
- 	 	navigation : false, 
-		slideSpeed : 300,
-		paginationSpeed : 400,
-    
-		singleItem:true
- 	});
+   navigation : false, 
+   slideSpeed : 300,
+   paginationSpeed : 400,
+   mouseDrag : false,
+   touchDrag : false,
+   singleItem:true
+});
 
 $('.next').click ->
   owl.trigger 'owl.next'
