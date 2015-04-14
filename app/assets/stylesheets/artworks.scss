@@ -9,6 +9,11 @@
 	width: auto;
 }
 
+.nocursor 
+{ 
+	cursor:none; 
+}
+
 .thumb_small
 {
 	@extend .thumb;
@@ -32,13 +37,17 @@
 .next, .prev
 {
 	height: 600px;
-	background-color: #fafafa;
+	background-color: #f0f0f0;
+	text-align:center;
 }
 
 .next > p, .prev > p
 {
+	display: block;
+	width:85%;
 	position: absolute;
 	top: 50%;
-	font-size: 2rem;
+	font-size: 4rem;
 	color: gainsboro;
+	text-align:center;
 }

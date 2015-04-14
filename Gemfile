@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'foundation-rails'
 
+gem 'tzinfo-data'
+
 gem 'owlcarousel-rails'
 
 # Use jquery as the JavaScript library

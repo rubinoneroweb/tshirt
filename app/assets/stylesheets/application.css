@@ -18,9 +18,28 @@
 
  */
 
+ body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ .fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
  h1, h2, h3, h4, h5, h6, a, input, th, td
  {
  	font-family: 'Source Code Pro', monospace;
+ }
+
+ h1
+ {
+ 	font-size: 1.5rem;
  }
 
  a.button:visited

@@ -13,8 +13,7 @@ owl.owlCarousel({
    navigation : false, 
    slideSpeed : 300,
    paginationSpeed : 400,
-   mouseDrag : false,
-   touchDrag : false,
+   
    singleItem:true
 });
 
