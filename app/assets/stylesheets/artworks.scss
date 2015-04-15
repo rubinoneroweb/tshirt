@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h1
+{
+	display: none;
+}
+
 .thumb
 {
 	display: block;
@@ -36,8 +41,8 @@
 
 .next, .prev
 {
-	height: 600px;
-	background-color: #f0f0f0;
+	height: 800px;
+	background-color: #008cba;
 	text-align:center;
 }
 

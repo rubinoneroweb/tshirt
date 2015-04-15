@@ -17,18 +17,21 @@
     <%= @artwork.name %>
   </h3>
   <div class="row">
-    <div class="field small-4 columns">
+    <div class="field small-3 columns">
       <%= f.label "Nome" %><br>
       <%= f.text_field :name %>
     </div>
-    <div class="field small-4 columns">
+    <div class="field small-3 columns">
       <%= f.label "Descrizione" %><br>
       <%= f.text_field :description %>
     </div>
-  
+    <div class="field small-3 columns">
+      <%= f.label "Nome File" %><br>
+      <%= f.text_field :path %>
+    </div>
   
 
-  <div class="actions small-4 columns">
+  <div class="actions small-3 columns">
   <%= f.label " " %><br>
     <%= f.submit "Aggiorna Dati", :class=>"button" %>
   </div>
