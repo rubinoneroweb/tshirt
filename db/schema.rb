@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401151831) do
+ActiveRecord::Schema.define(version: 20150416145359) do
 
   create_table "artcats", force: :cascade do |t|
     t.string   "description"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20150401151831) do
     t.string   "path"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "position"
+    t.integer  "maincat_id"
   end
 
   create_table "artworks_artcats", force: :cascade do |t|
