@@ -5,6 +5,7 @@ class ArtworksController < ApplicationController
   # GET /artworks.json
   def index
     @artworks = Artwork.all
+    @artcats = Artcat.all
   end
 
   def catalog

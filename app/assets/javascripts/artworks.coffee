@@ -86,5 +86,6 @@ $ ->
 
     return false
 
-
+$(".cat-header").click ->
+    $(".cat-" + $(this).data('cat')).toggle("slow");
 

@@ -1,10 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Elenco Disegni</h1>
+<h2>Elenco Disegni</h2>
+ 
+ <% @artcats.each do |artcat| %>
+
 
 <table>
   <thead>
-    <tr>
+  <tr>
+    <td colspan="7"><strong><a href ="#" data-cat = "<%= artcat.id %>" class="cat-header"><%= artcat.description.upcase %> (mostra/nascondi)</a></strong></td>
+  </tr>
+    <tr class="cat-list cat-<%= artcat.id %>">
       <th>Nome</th>
       <th>Descrizione</th>
       <th colspan="2">Immagine</th>
@@ -12,9 +18,9 @@
       <th colspan="2"></th>
     </tr>
   </thead>
-
-  <tbody>
-    <% @artworks.each do |artwork| %>
+ 
+  <tbody class="cat-list cat-<%= artcat.id %>">
+    <% artcat.own_artworks.each do |artwork| %>
       <tr>
         <td><%= artwork.name %></td>
         <td><%= artwork.description %></td>
@@ -27,7 +33,13 @@
       </tr>
     <% end %>
   </tbody>
+
+  
+
+
 </table>
+<br>
+<% end %>
 
 <br>
 
