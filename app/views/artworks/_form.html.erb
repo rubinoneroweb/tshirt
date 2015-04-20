@@ -19,6 +19,11 @@
     <%= f.label "Descrizione" %><br>
     <%= f.text_field :description %>
   </div>
+   <div class="field ">
+      <%= f.label "Categoria principale" %><br>
+  <%= f.select :maincat_id, options_for_select(Artcat.all.map{|mc|[mc.description, mc.id]}, @artwork.maincat_id ? @artwork.maincat_id : 0), {:prompt=>"Scegli categoria"}, { id: 'maincat_select', :required=>true } %>
+ </div>
+
   <div class="field">
     <%= f.label "Nome del file" %><br>
     <%= f.text_field :path %>
