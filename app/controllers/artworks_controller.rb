@@ -61,6 +61,22 @@ class ArtworksController < ApplicationController
   end
 
 
+  def reorder
+
+    @artworks = Artwork.all
+    @artcats = Artcat.all
+
+    respond_to do |format|
+        format.js
+       format.html { redirect_to artworks_url }
+    end
+    
+
+
+
+  end
+
+
   # GET /artworks/1
   # GET /artworks/1.json
   def show

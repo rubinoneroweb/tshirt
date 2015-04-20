@@ -8,26 +8,27 @@
 <table>
   <thead>
   <tr>
-    <td colspan="7"><strong><a href ="#" data-cat = "<%= artcat.id %>" class="cat-header"><%= artcat.description.upcase %> (mostra/nascondi)</a></strong></td>
+    <td colspan="8"><strong><a href ="#" data-cat = "<%= artcat.id %>" class="cat-header"><%= artcat.description.upcase %> (mostra/nascondi)</a></strong></td>
   </tr>
     <tr class="cat-list cat-<%= artcat.id %>">
       <th>Nome</th>
       <th>Descrizione</th>
       <th colspan="2">Immagine</th>
       <th>Categorie</th>
+      <th>Posizione</th>
       <th colspan="2"></th>
     </tr>
   </thead>
  
   <tbody class="cat-list cat-<%= artcat.id %>">
-    <% artcat.own_artworks.each do |artwork| %>
+    <% artcat.own_artworks.order("position").each do |artwork| %>
       <tr>
         <td><%= artwork.name %></td>
         <td><%= artwork.description %></td>
         <td><%= artwork.path %></td>
         <td><%= image_tag "catalog/" + artwork.path, :class=>"thumb_small" %></td>
         <td><%= artwork.artcat.map { |e| e.description  }.join(", ") %></td>
-        
+        <td><%= artwork.position  %><br></td>
         <td><%= link_to 'Modifica', edit_artwork_path(artwork) %></td>
         <td><%= link_to 'Elimina', artwork, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
       </tr>
