@@ -9,7 +9,7 @@ class ArtworksController < ApplicationController
   end
 
   def catalog
-    @artworks = Artwork.all
+    @artworks = Artcat.first.artwork
     @artcats = Artcat.all
     if params[:artcat_id] 
       @artworks = Artcat.find(params[:artcat_id]).artwork

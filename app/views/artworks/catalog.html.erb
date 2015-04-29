@@ -1,15 +1,16 @@
 <div class="nocursor">
+<br>
 	<div class="text-center ">
 
 		<% @artcats.each do |artcat| %>
 
-		<a class="button small cat" data-artcat="<%= artcat.id %>
+		<a class="button  cat" data-artcat="<%= artcat.id %>
 			">
-			<%= artcat.description.upcase %></a>
+			<strong><%= artcat.description.upcase %></strong></a>
 
 		<% end %>
 
-		<a class="button small cat" data-artcat="0">TUTTE - ALL</a>
+		
 	</div>
 	<div class="row">
 		<div class="small-2 columns prev ">
